@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import LogoBrand from './assets/BKBlank_LogoNuansaLegal.png';
-import Reveal from './reveal';
+// import LogoBrand from './src/assets/BKBlank_LogoNuansaLegal.png';
+import Reveal from '../reveal';
 // Import gambar lokal
-import our1 from "./assets/our/our_01.jpg";
-import our2 from "./assets/our/our_02.jpg";
-import our3 from "./assets/our/our_03.jpg";
-import our4 from "./assets/our/our_04.jpg";
-import our5 from "./assets/our/our_05.jpg";
+import our1 from "/src/assets/our/our_01.jpg";
+import our2 from "/src/assets/our/our_02.jpg";
+import our3 from "/src/assets/our/our_03.jpg";
+import our4 from "/src/assets/our/our_04.jpg";
+import our5 from "/src/assets/our/our_05.jpg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

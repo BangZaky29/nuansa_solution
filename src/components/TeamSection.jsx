@@ -1,12 +1,12 @@
 import React from "react";
 
 // Import foto lokal
-import daus from "./assets/person/daus.jpg";
-import arin from "./assets/person/arin.jpg";
-import ela from "./assets/person/ela.jpg";
-import kokom from "./assets/person/kokom.jpg";
-import noval from "./assets/person/noval.jpg";
-import Zaky from "./assets/person/Zaky.jpg";
+import daus from "/src/assets/person/daus.jpg";
+import arin from "/src/assets/person/arin.jpg";
+import ela from "/src/assets/person/ela.jpg";
+import kokom from "/src/assets/person/kokom.jpg";
+import noval from "/src/assets/person/noval.jpg";
+import Zaky from "/src/assets/person/Zaky.jpg";
 
 
 

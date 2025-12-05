@@ -1,5 +1,5 @@
 import React from 'react';
-import Reveal from './reveal';
+import Reveal from '../reveal';
 
 const Pricing = () => {
   const plans = [

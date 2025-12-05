@@ -244,91 +244,6 @@
 }
 
 /* ==========================================
-   PRICING STYLES
-   ========================================== */
-.pricing {
-  background: white;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.pricing-card {
-  position: relative;
-  border: 2px solid #f0f0f0;
-  transition: border-color 0.3s;
-}
-
-.pricing-card:hover {
-  border-color: var(--yellow2);
-}
-
-.pricing-card.recommended {
-  border: 2px solid var(--yellow2);
-  transform: scale(1.05);
-}
-
-.recommended-badge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: var(--gradient);
-  color: var(--text-dark);
-  padding: 4px 16px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.pricing-name {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--text-dark);
-}
-
-.pricing-price {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--text-dark);
-}
-
-.pricing-price span {
-  font-size: 16px;
-  color: #666;
-}
-
-.pricing-features {
-  list-style: none;
-  margin-bottom: 24px;
-}
-
-.pricing-features li {
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
-  color: #666;
-}
-
-.pricing-features li:before {
-  content: "✓ ";
-  color: var(--yellow2);
-  font-weight: 700;
-  margin-right: 8px;
-}
-
-.pricing-cta {
-  width: 100%;
-}
-
-/* ==========================================
    FOOTER STYLES
    ========================================== */
 .footer {
@@ -403,8 +318,6 @@
   .hero-placeholder { width: 100%; max-width: 420px; height: auto; aspect-ratio: 16 / 9; }
   .nav-menu { top: 64px; }
   .features-grid { grid-template-columns: 1fr; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .pricing-card.recommended { transform: scale(1); }
 
   .footer-content { grid-template-columns: 1fr; }
   .footer-logo { height: 36px; }
@@ -419,7 +332,6 @@
   .hero-text p { font-size: 14px; margin-bottom: 24px; }
   .hero-placeholder { width: 100%; max-width: 360px; height: auto; aspect-ratio: 16 / 9; }
   .features-grid { gap: 24px; }
-  .pricing-grid { gap: 24px; }
 }
 
 .footer-logo { height: 180px; width: auto; margin-bottom: 16px; }
