@@ -1,4 +1,5 @@
 import React from "react";
+import Reveal from '../reveal';
 
 // Import foto lokal
 import daus from "/src/assets/person/daus.jpg";
@@ -8,15 +9,13 @@ import kokom from "/src/assets/person/kokom.jpg";
 import noval from "/src/assets/person/noval.jpg";
 import Zaky from "/src/assets/person/Zaky.jpg";
 
-
-
 const TeamSection = () => {
   const team = [
     {
-        id: 1,
-        name: "Vikri Firdaus",
-        role: "Founder",
-        image: daus
+      id: 1,
+      name: "Vikri Firdaus",
+      role: "Founder",
+      image: daus
     },
     {
       id: 2,
@@ -48,25 +47,37 @@ const TeamSection = () => {
       role: "Full-Stack Developer",
       image: Zaky
     }
-
   ];
 
   return (
     <section className="team-section">
-      <h2 className="team-title">Our Team</h2>
+      
+      {/* Reveal untuk Judul */}
+      <Reveal delay={100}>
+        <h2 className="team-title">Our Team</h2>
+      </Reveal>
 
-      <div className="team-grid">
-        {team.map((person) => (
-          <div className="team-card" key={person.id}>
-            <div className="team-img-box">
-              <img src={person.image} alt={person.name} />
-            </div>
+      {/* Reveal untuk Grid */}
+      <Reveal delay={200}>
+        <div className="team-grid">
+          {team.map((person, index) => (
+            
+            // Reveal untuk setiap card (dengan delay berurutan)
+            <Reveal key={person.id} delay={300 + index * 150}>
+              <div className="team-card">
+                <div className="team-img-box">
+                  <img src={person.image} alt={person.name} />
+                </div>
 
-            <h3 className="team-name">{person.name}</h3>
-            <p className="team-role">{person.role}</p>
-          </div>
-        ))}
-      </div>
+                <h3 className="team-name">{person.name}</h3>
+                <p className="team-role">{person.role}</p>
+              </div>
+            </Reveal>
+
+          ))}
+        </div>
+      </Reveal>
+      
     </section>
   );
 };
