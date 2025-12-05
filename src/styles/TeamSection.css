@@ -1,0 +1,68 @@
+/* Section */
+.team-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.team-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Grid */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.team-card {
+  width: 260px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Foto Portrait */
+.team-img-box {
+  width: 100%;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.team-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Membuat portrait tetap rapi */
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Caption */
+.team-name {
+  margin-top: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.team-role {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #666;
+}
