@@ -6,6 +6,7 @@ import arin from "./assets/person/arin.jpg";
 import ela from "./assets/person/ela.jpg";
 import kokom from "./assets/person/kokom.jpg";
 import noval from "./assets/person/noval.jpg";
+import Zaky from "./assets/person/Zaky.jpg";
 
 
 
@@ -13,33 +14,39 @@ const TeamSection = () => {
   const team = [
     {
         id: 1,
-        name: "Daus",
-        role: "Direktur Utama",
+        name: "Vikri Firdaus",
+        role: "Founder",
         image: daus
     },
     {
       id: 2,
-      name: "Arin",
-      role: "Staff Designer",
-      image: arin
-    },
-    {
-      id: 3,
-      name: "Ela",
-      role: "Staff Marketing",
+      name: "Ela Nur Ajijah",
+      role: "Marketing Specialist",
       image: ela
     },
     {
+      id: 3,
+      name: "Marina Cinta Mentari",
+      role: "Graphic Designer",
+      image: arin
+    },
+    {
       id: 4,
-      name: "Kokom",
-      role: "Staff Operational",
+      name: "Siti Nur Komariah",
+      role: "Operations Staff",
       image: kokom
     },
     {
       id: 5,
-      name: "Noval",
-      role: "Staff Operational",
+      name: "Nauval Ramadan",
+      role: "Operations Staff",
       image: noval
+    },
+    {
+      id: 6,
+      name: "Zaky Aulia Qolbi",
+      role: "Full-Stack Developer",
+      image: Zaky
     }
 
   ];
