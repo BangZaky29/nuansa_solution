@@ -8,6 +8,7 @@
   --yellow2: #FFB300;
   --gradient: linear-gradient(90deg, #FFD54A, #FFB300);
   --text-dark: #333333;
+  --header-height: 64px;
 }
 
 /* ==========================================
@@ -95,4 +96,14 @@ p {
   section {
     padding: 60px 0;
   }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  h1 { font-size: 28px; line-height: 1.25; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  p { font-size: 15px; }
+  section { padding: 40px 0; }
+  :root { --header-height: 56px; }
 }
