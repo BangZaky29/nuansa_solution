@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================
+   CSS VARIABLES
+   ========================================== */
+:root {
+  --yellow1: #FFD54A;
+  --yellow2: #FFB300;
+  --gradient: linear-gradient(90deg, #FFD54A, #FFB300);
+  --text-dark: #333333;
+}
+
+/* ==========================================
+   GLOBAL RESET
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   CONTAINER
+   ========================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   SECTION SPACING
+   ========================================== */
+section {
+  padding: 80px 0;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   ========================================== */
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+}
