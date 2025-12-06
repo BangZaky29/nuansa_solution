@@ -4,6 +4,10 @@ import IconEmail from './assets/sosialMedia/email.png';
 import IconInstagram from './assets/sosialMedia/instagram.png';
 import IconTiktok from './assets/sosialMedia/tiktok.png';
 import LogoBrand from './assets/BKBlank_LogoNuansaLegal.png';
+import phoneIcon from "/src/assets/sosialMedia/phone.png";
+import emailIcon from "/src/assets/sosialMedia/email_BK.png";
+import clockIcon from "/src/assets/sosialMedia/Clock.png";
+
 
 const Footer = () => {
   return (
@@ -28,7 +32,7 @@ const Footer = () => {
               <a href="https://www.tiktok.com/@nuansalegal.id?lang=id-ID" target="_blank" rel="noreferrer">
                 <img src={IconTiktok} alt="Tiktok" />
               </a>
-              <a href="mailto:elanurajijah14@gmail.com">
+              <a href="mailto:cs@nuansalegal.id">
                 <img src={IconEmail} alt="Email" />
               </a>
             </div>
@@ -53,11 +57,26 @@ const Footer = () => {
           </Reveal>
           <Reveal className="footer-section footer-contact" delay={160}>
             <h3>Kontak Kami</h3>
-            <ul className="footer-contact-list">
-              <li><span className="contact-icon phone"></span><span>0896-4444-8721</span></li>
-              <li><span className="contact-icon mail"></span><span>cs@nuansalegal.id</span></li>
-              <li><span className="contact-icon clock"></span><span>08.00 - 17.00 WIB</span></li>
-            </ul>
+            <div className="footer-contact">
+              <ul className="footer-contact-list">
+                <li>
+                  <img src={phoneIcon} alt="Phone" className="contact-icon" />
+                  <span>0896-4444-8721</span>
+                </li>
+                <li> 
+                  <img src={emailIcon} alt="Email" className="contact-icon" />
+                  <span>cs@nuansalegal.id</span>
+                </li>
+                <li> 
+                  <img src={emailIcon} alt="Email" className="contact-icon" />
+                  <span>elanurajijah14@gmail.com</span>
+                </li>
+                <li>
+                  <img src={clockIcon} alt="Clock" className="contact-icon" />
+                  <span>08.00 - 17.00 WIB</span>
+                </li>
+              </ul>
+            </div>
           </Reveal>
         </div>
         <div className="footer-copyright">
