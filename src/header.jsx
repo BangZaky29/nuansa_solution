@@ -15,12 +15,12 @@ const Header = () => {
               <img src={LogoHalimoon} alt="Halimoon" className="logo-halimoon" />
             </a>
             <p>
-              Support<br />
-              By Nuansa Legal
+              Support
+              <a href="https://www.nuansalegal.id/" target="_blank" rel="noopener noreferrer">
+                <img src={LogoNuansaLegal} alt="Nuansa Legal" className="logo-nuansa-legal" />
+              </a>
+              <br />By Nuansa Legal
             </p>
-            <a href="https://www.nuansalegal.id/" className="logo">
-              <img src={LogoNuansaLegal} alt="Nuansa Legal" className="logo-nuansa-legal" />
-            </a>
           </div>
           <nav>
             <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
