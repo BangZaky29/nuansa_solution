@@ -3,7 +3,7 @@ import Reveal from '../reveal';
 
 // Import foto lokal
 import daus from "/src/assets/person/daus.jpg";
-import qisthi from "/src/assets/person/qisthi.jpg";
+import qisthi from "/src/assets/person/Qisthi.jpg";
 import arin from "/src/assets/person/arin.jpg";
 import ela from "/src/assets/person/ela.jpg";
 import kokom from "/src/assets/person/kokom.jpg";
