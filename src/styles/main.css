@@ -4,9 +4,9 @@
    CSS VARIABLES
    ========================================== */
 :root {
-  --yellow1: #FFD54A;
-  --yellow2: #FFB300;
-  --gradient: linear-gradient(90deg, #FFD54A, #FFB300);
+  --blue1: #A7D8FF;       /* biru muda lembut */
+  --blue2: #4DA6FF;       /* biru sedikit lebih pekat */
+  --gradient: linear-gradient(90deg, #A7D8FF, #4DA6FF);
   --text-dark: #333333;
   --header-height: 64px;
 }
