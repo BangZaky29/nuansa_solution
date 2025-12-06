@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
+import LogoNuansaLegal from './assets/BKBlank_LogoPTNuansaSejahtera.png';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
