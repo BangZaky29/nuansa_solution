@@ -3,7 +3,7 @@ import Reveal from './reveal';
 import IconEmail from './assets/sosialMedia/email.png';
 import IconInstagram from './assets/sosialMedia/instagram.png';
 import IconTiktok from './assets/sosialMedia/tiktok.png';
-import LogoBrand from './assets/halimoon_noBK.png';
+import LogoBrand from './assets/NS_blank_01.png';
 import phoneIcon from "/src/assets/sosialMedia/phone.png";
 import emailIcon from "/src/assets/sosialMedia/email_BK.png";
 import clockIcon from "/src/assets/sosialMedia/Clock.png";

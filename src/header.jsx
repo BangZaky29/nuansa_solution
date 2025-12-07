@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LogoHalimoon from './assets/halimoon_noBK.png';
+import LogoHalimoon from './assets/NS_blank_02.png';
 import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
 
 const Header = () => {
