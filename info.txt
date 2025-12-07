@@ -1,0 +1,87 @@
+Prosedur instalation pembuatan website 
+  - npm create vite@latest kalkulator-pph -- --template react
+  - cd kalkulator-pph
+  - npm install
+  - npm run dev 
+-----------------------------------------------------------------------
+
+=======================================================================
+PROMTING DESIGN SURAT GENERATOR - Nuansa KUNING, React + vite + node.js
+this promt for Ai Copilot
+=======================================================================
+saya mau mebuat website untuk generate surat permohonan 
+- tolong bantu saya buatkan prompt nya unuk bias d auto generate code ke dalam Ai Coder saya 
+- saya mau prompt dengan jelas agar inpurmasi bias d sampaikan lebih detail 
+
+saya mau prompt nya : 
+- buatkan saya website permohonan seperti pada gambar yg d kirim 
+- untuk Bahasa yg d gunakan adalah (react + vite + css + node.js)
+- dengan buatkan dulu installation untuk vite nya 
+Prosedur instalation pembuatan website 
+  - npm create vite@latest generator-surat-permohonan -- --template react
+  - cd generator-surat-permohonan
+  - npm install
+  - npm run dev 
+- untuk style menggunakan style css dengan nuansa design nuansa kuning + gradient
+- pastikan untuk kode react.jsx dan .css nay terpisah buatkan file dan folder yang modular supaya untuk maintenance di permudah 
+
+
+PROMTING to CLOUD AI 
+
+Ah, sekarang saya paham! Kamu ingin **teks prompting** yang sudah rapi dan tersusun **dalam satu salinan utuh**, sehingga bisa langsung di-copy paste untuk digunakan sebagai deskripsi proyek atau instruksi. Berikut versi yang sudah dirapikan:
+
+---
+
+### **Prompt / Instruksi Proyek: Website Generator Surat Cuti Tahunan**
+
+Buat sebuah **website generator surat permohonan cuti tahunan** dengan fitur sebagai berikut:
+
+1. **Fitur Utama** (BISA DI GANTI)
+
+   * Input data personal: **nama, jabatan, alamat**
+   * Input detail cuti: **tanggal mulai, tanggal akhir, alamat selama cuti**
+   * Input informasi surat: **nomor surat, tanggal pembuatan**
+   * Preview surat otomatis di sisi kanan layar
+   * Tombol aksi: **Buat Surat**, **Hapus**, dan **Download PDF**
+
+2. **Teknologi yang Digunakan**
+
+   * **Frontend:** React + Vite
+   * **Styling:** CSS eksternal, warna dominan **kuning dengan gradasi lembut**
+   * **Backend (opsional):** Node.js
+
+3. **Langkah Instalasi Awal Proyek Vite**
+
+```bash
+npm create vite@latest generator-surat-permohonan -- --template react
+cd generator-surat-permohonan
+npm install
+npm run dev
+```
+
+4. **Struktur Kode Modular dan Maintainable**
+
+   * Pisahkan file `.jsx` dan `.css` ke folder yang sesuai
+   * Gunakan folder **components/**, **styles/**, dan **pages/**
+   * Setiap komponen (form input, preview surat, tombol aksi, header, footer) dibuat **terpisah**
+   * Gunakan **CSS eksternal**, hindari styling inline
+
+5. **Desain UI**
+
+   * Warna dominan: **kuning dengan gradasi lembut**
+   * Layout responsif: **form input di kiri**, **preview surat di kanan**
+   * Tombol “Buat Surat” dan “Hapus” jelas, interaktif, dan mudah dijangkau
+   * Header menampilkan **logo Nuansa Lega** (gunakan URL image)
+   * Footer sederhana untuk informasi tambahan
+
+6. **Fungsi Tambahan**
+
+   * Tombol **Download PDF** untuk mengekspor hasil surat menjadi dokumen PDF
+   * Preview surat diperbarui secara otomatis saat input berubah
+   * Tombol **Hapus** untuk membersihkan semua input
+
+7. **Catatan Teknis**
+
+   * Gunakan React state untuk mengelola input form
+   * Gunakan `ref` dan library seperti `html2canvas` + `jsPDF` untuk download PDF
+   * Pastikan kode modular agar mudah dikembangkan atau diubah di masa depan

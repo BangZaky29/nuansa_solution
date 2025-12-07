@@ -65,11 +65,7 @@ const Footer = () => {
                 </li>
                 <li> 
                   <img src={emailIcon} alt="Email" className="contact-icon" />
-                  <span>cs@nuansalegal.id</span>
-                </li>
-                <li> 
-                  <img src={emailIcon} alt="Email" className="contact-icon" />
-                  <span>elanurajijah14@gmail.com</span>
+                  <span>nuansalegalindonesia@gmail.com</span>
                 </li>
                 <li>
                   <img src={clockIcon} alt="Clock" className="contact-icon" />
