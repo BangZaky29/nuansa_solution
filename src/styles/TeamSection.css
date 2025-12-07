@@ -1,15 +1,14 @@
 /* Section */
 .team-section-halimoon {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: #f9f9f9;
 }
 
 .team-title-halimoon {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 40px;
-  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 /* Carousel Wrapper */
@@ -20,65 +19,39 @@
   justify-content: center;
   overflow: hidden;
   padding: 40px 0;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .carousel-halimoon {
   position: relative;
-  height: 480px;
+  height: 420px;
   width: 100%;
   max-width: 900px;
-  perspective: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  perspective: 1000px;
 }
 
 /* Card Style */
 .carousel-card-team-halimoon {
-  width: 280px;
-  padding: 20px;
-  border-radius: 20px;
+  width: 260px;
+  padding: 18px;
+  border-radius: 18px;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0.4;
-  transform: scale(0.75) rotateY(25deg);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  opacity: 0.3;
+  transform: scale(0.8) rotateY(20deg);
   pointer-events: none;
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  margin-top: -240px;
-  margin-left: -140px;
-  transform-origin: center center;
-  will-change: transform, opacity;
+  transform-origin: center;
 }
 
 /* Foto Portrait */
 .team-img-box-halimoon {
   width: 100%;
-  height: 340px;
-  border-radius: 16px;
+  height: 320px;
+  border-radius: 14px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  position: relative;
-}
-
-.team-img-box-halimoon::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.carousel-card-team-halimoon.active .team-img-box-halimoon::after {
-  opacity: 1;
 }
 
 .team-img-box-halimoon img {
@@ -86,321 +59,94 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  display: block;
+  transition: transform 0.4s ease;
 }
 
 .carousel-card-team-halimoon.active .team-img-box-halimoon img:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* Caption */
 .team-name-halimoon {
-  margin-top: 16px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2d3748;
-  transition: color 0.3s ease;
-}
-
-.carousel-card-team-halimoon.active .team-name-halimoon {
-  color: #1a202c;
+  margin-top: 14px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .team-role-halimoon {
-  margin-top: 6px;
-  font-size: 1rem;
-  color: #718096;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #666;
 }
 
-.carousel-card-team-halimoon.active .team-role-halimoon {
-  color: #4a5568;
-}
-
-/* Position States with Smooth Transitions */
+/* Position States */
 .carousel-card-team-halimoon.active {
   opacity: 1;
-  transform: translateX(0) translateY(0) scale(1) rotateY(0deg);
-  z-index: 10;
+  transform: translateX(-50%) scale(1) rotateY(0deg);
+  z-index: 3;
   pointer-events: auto;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 .carousel-card-team-halimoon.prev {
-  transform: translateX(-380px) translateY(0) scale(0.85) rotateY(20deg);
-  opacity: 0.5;
-  z-index: 5;
-  filter: brightness(0.8);
+  transform: translateX(-150%) scale(0.9) rotateY(15deg);
+  opacity: 0.6;
+  z-index: 2;
 }
 
 .carousel-card-team-halimoon.next {
-  transform: translateX(380px) translateY(0) scale(0.85) rotateY(-20deg);
-  opacity: 0.5;
-  z-index: 5;
-  filter: brightness(0.8);
+  transform: translateX(50%) scale(0.9) rotateY(-15deg);
+  opacity: 0.6;
+  z-index: 2;
 }
 
 .carousel-card-team-halimoon.hidden {
   opacity: 0;
-  transform: translateX(0) translateY(0) scale(0.5) rotateY(0deg);
+  transform: translateX(0) scale(0.5);
   z-index: 1;
-  pointer-events: none;
 }
 
-/* Buttons with Enhanced Style */
+/* Buttons */
 .carousel-btn-halimoon {
-  background: white;
-  border: 2px solid #e2e8f0;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 2rem;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
   cursor: pointer;
-  color: #2d3748;
-  z-index: 20;
-  padding: 0;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  position: relative;
+  color: #333;
+  z-index: 4;
+  padding: 0 20px;
+  transition: color 0.3s ease;
 }
 
 .carousel-btn-halimoon:hover {
-  background: #0077cc;
-  color: white;
-  border-color: #0077cc;
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(0, 119, 204, 0.3);
-}
-
-.carousel-btn-halimoon:active {
-  transform: scale(0.95);
-}
-
-.carousel-btn-halimoon.left {
-  margin-right: 20px;
-}
-
-.carousel-btn-halimoon.right {
-  margin-left: 20px;
-}
-
-/* Loading State Animation */
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-/* Hover Effects on Active Card */
-.carousel-card-team-halimoon.active {
-  transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.carousel-card-team-halimoon.active:hover {
-  transform: translateX(0) translateY(-10px) scale(1.02) rotateY(0deg);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  color: #0077cc;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .carousel-halimoon {
-    height: 460px;
-  }
-  
-  .carousel-card-team-halimoon {
-    width: 260px;
-    margin-left: -130px;
-  }
-  
-  .carousel-card-team-halimoon.prev {
-    transform: translateX(-340px) translateY(0) scale(0.85) rotateY(20deg);
-  }
-  
-  .carousel-card-team-halimoon.next {
-    transform: translateX(340px) translateY(0) scale(0.85) rotateY(-20deg);
-  }
-  
-  .team-img-box-halimoon {
-    height: 320px;
-  }
-}
-
 @media (max-width: 768px) {
-  .team-section-halimoon {
-    padding: 50px 16px;
-  }
-  
-  .team-title-halimoon {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .carousel-halimoon {
-    height: 440px;
-  }
-  
   .carousel-card-team-halimoon {
-    width: 240px;
-    padding: 18px;
-    margin-left: -120px;
+    width: 220px;
   }
-  
-  .carousel-card-team-halimoon.prev {
-    transform: translateX(-280px) translateY(0) scale(0.8) rotateY(25deg);
-    opacity: 0.3;
-  }
-  
-  .carousel-card-team-halimoon.next {
-    transform: translateX(280px) translateY(0) scale(0.8) rotateY(-25deg);
-    opacity: 0.3;
-  }
-  
   .team-img-box-halimoon {
-    height: 300px;
-  }
-  
-  .carousel-btn-halimoon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.8rem;
-  }
-  
-  .carousel-btn-halimoon.left {
-    margin-right: 15px;
-  }
-  
-  .carousel-btn-halimoon.right {
-    margin-left: 15px;
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 }
 
 @media (max-width: 480px) {
   .team-section-halimoon { 
-    padding: 40px 12px; 
+    padding: 32px 16px; 
   }
-  
   .team-title-halimoon { 
-    font-size: 1.6rem;
-    margin-bottom: 25px;
+    font-size: 1.4rem; 
   }
-  
-  .carousel-halimoon {
-    height: 420px;
-  }
-  
   .carousel-card-team-halimoon { 
-    width: 220px;
     max-width: 300px; 
-    padding: 16px;
-    margin-left: -110px;
+    padding: 16px; 
   }
-  
-  .carousel-card-team-halimoon.prev {
-    transform: translateX(-240px) translateY(0) scale(0.75) rotateY(30deg);
-    opacity: 0.2;
-  }
-  
-  .carousel-card-team-halimoon.next {
-    transform: translateX(240px) translateY(0) scale(0.75) rotateY(-30deg);
-    opacity: 0.2;
-  }
-  
-  .team-img-box-halimoon {
-    height: 280px;
-  }
-  
   .team-name-halimoon { 
-    font-size: 1.1rem;
-    margin-top: 12px;
+    font-size: 1.1rem; 
   }
-  
   .team-role-halimoon { 
-    font-size: 0.9rem;
-    margin-top: 4px;
+    font-size: 0.9rem; 
   }
-  
-  .carousel-btn-halimoon {
-    width: 46px;
-    height: 46px;
-    font-size: 1.6rem;
-  }
-  
-  .carousel-btn-halimoon.left {
-    margin-right: 10px;
-  }
-  
-  .carousel-btn-halimoon.right {
-    margin-left: 10px;
-  }
-}
-
-@media (max-width: 360px) {
-  .carousel-card-team-halimoon {
-    width: 200px;
-    margin-left: -100px;
-  }
-  
-  .team-img-box-halimoon {
-    height: 260px;
-  }
-  
-  .carousel-card-team-halimoon.prev {
-    transform: translateX(-220px) translateY(0) scale(0.7) rotateY(30deg);
-  }
-  
-  .carousel-card-team-halimoon.next {
-    transform: translateX(220px) translateY(0) scale(0.7) rotateY(-30deg);
-  }
-}
-
-/* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-  .carousel-card-team-halimoon.active:hover {
-    transform: translateX(0) translateY(0) scale(1) rotateY(0deg);
-  }
-  
-  .carousel-btn-halimoon:hover {
-    transform: scale(1);
-  }
-  
-  .carousel-btn-halimoon:active {
-    transform: scale(0.9);
-    background: #0077cc;
-    color: white;
-  }
-}
-
-/* Smooth Scrolling for All Animations */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.carousel-card-team-halimoon,
-.carousel-btn-halimoon {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
