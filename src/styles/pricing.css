@@ -1,4 +1,32 @@
 /* ==========================================
+   GLOBAL FIX - Prevent Horizontal Scroll
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent all elements from causing horizontal scroll */
+.pricing,
+.pricing *,
+.carousel-container,
+.carousel-track,
+.carousel-card {
+  max-width: 100%;
+}
+
+/* ==========================================
    PRICING CAROUSEL STYLES
    ========================================== */
 
@@ -464,6 +492,10 @@
    RESPONSIVE STYLES
    ========================================== */
 
+/* ==========================================
+   RESPONSIVE STYLES - FIXED CENTERING
+   ========================================== */
+
 @media (max-width: 1024px) {
   .carousel-container {
     height: 550px;
@@ -472,6 +504,7 @@
   .carousel-card {
     width: 320px;
     height: 480px;
+    margin-left: -160px; /* ✅ FIXED: 320px / 2 = 160px */
   }
 
   .carousel-card.prevSlide {
@@ -519,6 +552,7 @@
   .carousel-card {
     width: 280px;
     height: 440px;
+    margin-left: -140px; /* ✅ FIXED: 280px / 2 = 140px */
   }
 
   .carousel-card.prevSlide {
@@ -592,10 +626,17 @@
 @media (max-width: 480px) {
   .pricing {
     padding: 50px 0;
+    overflow-x: hidden; /* ✅ Tambahkan ini */
+  }
+  
+  .pricing .container {
+    padding: 0 15px; /* ✅ Kurangi padding */
+    overflow-x: hidden; /* ✅ Tambahkan ini */
   }
 
   .carousel-header {
     margin-bottom: 40px;
+    padding: 0 10px; /* ✅ Tambahkan padding */
   }
 
   .carousel-header h2 {
@@ -608,15 +649,23 @@
 
   .carousel-container {
     height: 480px;
+    width: 100%; /* ✅ Pastikan width 100% */
+    max-width: 100vw; /* ✅ Tidak boleh melebihi viewport */
+    overflow: hidden; /* ✅ Tambahkan ini */
+  }
+
+  .carousel-track {
+    overflow: hidden; /* ✅ Tambahkan ini */
   }
 
   .carousel-card {
     width: 260px;
     height: 420px;
+    margin-left: -130px;
   }
 
   .carousel-card.activeSlide {
-    transform: translateX(0) scale(1.05);
+    transform: translateX(0) scale(1.05) rotateY(0deg);
   }
 
   .carousel-card.prevSlide {
@@ -740,6 +789,7 @@
   .carousel-card {
     width: 240px;
     height: 400px;
+    margin-left: -120px; /* ✅ FIXED: 240px / 2 = 120px */
   }
 
   .card-image-wrapper {
