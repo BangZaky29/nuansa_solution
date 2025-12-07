@@ -32,7 +32,7 @@ body {
 
 .pricing {
   background: white;
-  padding: 80px 0;
+  padding: 10px 0;
   min-height: auto;
 }
 
@@ -46,7 +46,7 @@ body {
 .carousel-header {
   text-align: center;
   color: var(--text-dark);
-  margin-bottom: 60px;
+  margin-bottom: -100px;
 }
 
 .carousel-header h2 {
@@ -68,7 +68,7 @@ body {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  height: 600px;
+  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,12 +84,12 @@ body {
   justify-content: center;
 }
 
-/* Carousel Card */
+/* Carousel Card - FULL HEIGHT */
 .carousel-card {
   position: absolute;
-  padding: 15px;
+  padding: 0;
   width: 350px;
-  height: 520px;
+  height: 380px;
   background: white;
   border-radius: 24px;
   overflow: hidden;
@@ -98,7 +98,9 @@ body {
   cursor: pointer;
   border: 2px solid #f0f0f0;
   left: 50%;
-  margin-left: -175px; /* Setengah dari width card untuk center */
+  margin-left: -175px;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel-card.activeSlide {
@@ -131,10 +133,10 @@ body {
 /* Recommended Badge */
 .recommended-badge-carousel {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  color: #333;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff4c4c 0%, #ff0000 100%);
+  color: #ffffff;
   padding: 8px 20px;
   border-radius: 25px;
   font-size: 12px;
@@ -148,10 +150,11 @@ body {
 /* Card Image Wrapper */
 .card-image-wrapper {
   width: 100%;
-  height: 320px;
+  height: 380px;
   position: relative;
   overflow: hidden;
   background: #f8f9fa;
+  flex-shrink: 0;
 }
 
 .card-poster-image {
@@ -184,11 +187,53 @@ body {
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Image Preview Hint */
+.image-preview-hint {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-card.activeSlide:hover .image-preview-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-preview-hint svg {
+  width: 16px;
+  height: 16px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
 /* Card Content */
 .card-content {
   padding: 25px;
   background: white;
-  height: 200px;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -330,12 +375,55 @@ body {
   }
 }
 
+/* Image Preview Modal */
+.modal-image-preview {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.preview-poster-full {
+  max-width: 100%;
+  max-height: calc(90vh - 80px);
+  width: auto;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+.preview-title {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 20px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+}
+
+/* Full Details Modal */
 .modal-content-carousel {
   background: white;
   border-radius: 24px;
   max-width: 900px;
-  width: 100%;
   max-height: 90vh;
+  width: 100%;
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -387,12 +475,13 @@ body {
 .modal-body {
   display: flex;
   flex-direction: column;
+  height: 90vh;
 }
 
 /* Modal Image */
 .modal-image-wrapper {
   width: 100%;
-  height: 400px;
+  max-height: 100vh;
   position: relative;
   overflow: hidden;
   border-radius: 24px 24px 0 0;
@@ -400,7 +489,7 @@ body {
 
 .modal-poster-image {
   width: 100%;
-  height: 100%;
+  max-height: 100vh;
   object-fit: cover;
   display: block;
 }
@@ -492,19 +581,15 @@ body {
    RESPONSIVE STYLES
    ========================================== */
 
-/* ==========================================
-   RESPONSIVE STYLES - FIXED CENTERING
-   ========================================== */
-
 @media (max-width: 1024px) {
   .carousel-container {
-    height: 550px;
+    height: 600px;
   }
 
   .carousel-card {
     width: 320px;
-    height: 480px;
-    margin-left: -160px; /* ✅ FIXED: 320px / 2 = 160px */
+    height: 540px;
+    margin-left: -160px;
   }
 
   .carousel-card.prevSlide {
@@ -516,12 +601,17 @@ body {
   }
 
   .card-image-wrapper {
-    height: 280px;
+    height: 340px;
   }
 
   .card-name-overlay h3 {
     font-size: 32px;
   }
+
+    .modal-body {
+    height: 40vh;
+  }
+
 
   .modal-image-wrapper {
     height: 350px;
@@ -546,13 +636,13 @@ body {
   }
 
   .carousel-container {
-    height: 500px;
+    height: 550px;
   }
 
   .carousel-card {
     width: 280px;
-    height: 440px;
-    margin-left: -140px; /* ✅ FIXED: 280px / 2 = 140px */
+    height: 500px;
+    margin-left: -140px;
   }
 
   .carousel-card.prevSlide {
@@ -566,7 +656,7 @@ body {
   }
 
   .card-image-wrapper {
-    height: 260px;
+    height: 320px;
   }
 
   .card-name-overlay h3 {
@@ -575,7 +665,6 @@ body {
 
   .card-content {
     padding: 20px;
-    height: 180px;
   }
 
   .card-title {
@@ -600,6 +689,11 @@ body {
     height: 20px;
   }
 
+    .modal-body {
+    height: 40vh;
+  }
+
+
   .modal-image-wrapper {
     height: 300px;
   }
@@ -621,22 +715,30 @@ body {
     height: 44px;
     font-size: 28px;
   }
+
+  .preview-poster-full {
+    max-height: calc(90vh - 60px);
+  }
+
+  .preview-title {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
   .pricing {
-    padding: 50px 0;
-    overflow-x: hidden; /* ✅ Tambahkan ini */
+    padding: 10px 0;
+    overflow-x: hidden;
   }
   
   .pricing .container {
-    padding: 0 15px; /* ✅ Kurangi padding */
-    overflow-x: hidden; /* ✅ Tambahkan ini */
+    padding: 0 15px;
+    overflow-x: hidden;
   }
 
   .carousel-header {
-    margin-bottom: 40px;
-    padding: 0 10px; /* ✅ Tambahkan padding */
+    margin-bottom: 50px;
+    padding: 0 10px;
   }
 
   .carousel-header h2 {
@@ -649,18 +751,17 @@ body {
 
   .carousel-container {
     height: 480px;
-    width: 100%; /* ✅ Pastikan width 100% */
-    max-width: 100vw; /* ✅ Tidak boleh melebihi viewport */
-    overflow: hidden; /* ✅ Tambahkan ini */
+    overflow: hidden;
   }
 
   .carousel-track {
-    overflow: hidden; /* ✅ Tambahkan ini */
+    height: 100%;
+    overflow: hidden;
   }
 
   .carousel-card {
     width: 260px;
-    height: 420px;
+    height: 350px;
     margin-left: -130px;
   }
 
@@ -679,7 +780,7 @@ body {
   }
 
   .card-image-wrapper {
-    height: 240px;
+    height: 350px;
   }
 
   .card-name-overlay h3 {
@@ -692,7 +793,6 @@ body {
 
   .card-content {
     padding: 18px;
-    height: 180px;
   }
 
   .card-title {
@@ -718,7 +818,7 @@ body {
   }
 
   .carousel-dots {
-    margin-top: 40px;
+    margin-top: 10px;
     gap: 10px;
   }
 
@@ -732,11 +832,21 @@ body {
   }
 
   .modal-overlay {
-    padding: 15px;
+    padding: 30px;
   }
 
+  .modal-body {
+    padding: 4px;
+    height: 50vh;
+    margin: 30px;
+  }
+
+
   .modal-image-wrapper {
-    height: 260px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 20px;
+    height: 380px;
   }
 
   .modal-plan-name {
@@ -778,6 +888,21 @@ body {
     top: 15px;
     right: 15px;
   }
+
+  .preview-poster-full {
+    max-height: calc(90vh - 50px);
+    border-radius: 16px;
+  }
+
+  .preview-title {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .image-preview-hint {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
 }
 
 /* Extra small devices */
@@ -788,17 +913,22 @@ body {
 
   .carousel-card {
     width: 240px;
-    height: 400px;
-    margin-left: -120px; /* ✅ FIXED: 240px / 2 = 120px */
+    height: 460px;
+    margin-left: -120px;
   }
 
   .card-image-wrapper {
-    height: 220px;
+    height: 280px;
   }
 
   .card-name-overlay h3 {
     font-size: 24px;
   }
+
+    .modal-body {
+    height: 40vh;
+  }
+
 
   .modal-image-wrapper {
     height: 240px;
@@ -806,6 +936,10 @@ body {
 
   .modal-plan-name {
     font-size: 36px;
+  }
+
+  .preview-title {
+    font-size: 16px;
   }
 }
 
@@ -838,24 +972,29 @@ body {
   .modal-cta-btn:active {
     transform: scale(0.98);
   }
+
+  .image-preview-hint {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
 }
 
 /* Landscape orientation on mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .carousel-container {
-    height: 420px;
+    height: 450px;
   }
 
   .carousel-card {
-    height: 360px;
+    height: 400px;
   }
 
   .card-image-wrapper {
-    height: 220px;
+    height: 260px;
   }
 
-  .card-content {
-    height: 140px;
+  .modal-body {
+    height: 40vh;
   }
 
   .modal-image-wrapper {

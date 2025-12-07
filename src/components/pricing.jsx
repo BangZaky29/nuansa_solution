@@ -12,7 +12,7 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "CV",
+      // name: "CV",
       poster: poster_01,
       color: "#FF6B6B",
       features: [
@@ -25,7 +25,7 @@ const Pricing = () => {
       recommended: false
     },
     {
-      name: "Firma",
+      // name: "Firma",
       poster: poster_02,
       color: "#4ECDC4",
       features: [
@@ -40,7 +40,7 @@ const Pricing = () => {
       recommended: true
     },
     {
-      name: "Izin Properti",
+      // name: "Izin Properti",
       poster: poster_03,
       color: "#95E1D3",
       features: [
@@ -170,37 +170,20 @@ const Pricing = () => {
         </div>
       </div>
 
-      {/* Modal for Full Details */}
+      {/* Modal for Full Poster Only */}
       {selectedImage && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay" onClick={closeModal} style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
           <div className="modal-content-carousel" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={closeModal}>×</button>
             
             <div className="modal-body">
-              {/* Modal Image */}
+              {/* Modal Image Only */}
               <div className="modal-image-wrapper">
                 <img 
                   src={selectedImage.poster} 
                   alt={selectedImage.name}
                   className="modal-poster-image"
                 />
-                <div className="modal-overlay-gradient">
-                  <h2 className="modal-plan-name">{selectedImage.name}</h2>
-                </div>
-              </div>
-
-              {/* Modal Details */}
-              <div className="modal-details">
-                <h3>{selectedImage.name} Package</h3>
-                <div className="modal-features">
-                  {selectedImage.features.map((feature, idx) => (
-                    <div key={idx} className="modal-feature-item">
-                      <span className="feature-check">✓</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <button className="modal-cta-btn">Pilih Paket Ini</button>
               </div>
             </div>
           </div>
