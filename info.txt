@@ -85,3 +85,8 @@ npm run dev
    * Gunakan React state untuk mengelola input form
    * Gunakan `ref` dan library seperti `html2canvas` + `jsPDF` untuk download PDF
    * Pastikan kode modular agar mudah dikembangkan atau diubah di masa depan
+
+
+# DEPLOY GITHUB PROJECT KE DOMAIN UTAMA nuansasolution.id 
+
+bangzaky0029@nuansaSolution:/var/www/nuansa_solution/nuansa_solution$ ./deploy.nuansa
