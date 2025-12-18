@@ -32,7 +32,7 @@ const Footer = () => {
               <a href="https://www.tiktok.com/@nuansalegal.id?lang=id-ID" target="_blank" rel="noreferrer">
                 <img src={IconTiktok} alt="Tiktok" />
               </a>
-              <a href="mailto:cs@nuansalegal.id">
+              <a href="nuansasolutionofficial@gmail.com">
                 <img src={IconEmail} alt="Email" />
               </a>
             </div>
@@ -67,6 +67,10 @@ const Footer = () => {
                   <img src={emailIcon} alt="Email" className="contact-icon" />
                   <span>nuansalegalindonesia@gmail.com</span>
                 </li>
+                <li> 
+                  <img src={emailIcon} alt="Email" className="contact-icon" />
+                  <span>nuansasolutionofficial@gmail.com</span>
+                </li>
                 <li>
                   <img src={clockIcon} alt="Clock" className="contact-icon" />
                   <span>08.00 - 17.00 WIB</span>
@@ -76,7 +80,7 @@ const Footer = () => {
           </Reveal>
         </div>
         <div className="footer-copyright">
-          <p>&copy; 2025 Nuansa Legal. All rights reserved.</p>
+          <p>&copy; 2022 Nuansa Solution. All rights reserved.</p>
         </div>
       </div>
     </footer>

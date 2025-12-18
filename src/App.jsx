@@ -22,7 +22,6 @@ const App = () => {
       <Header />
       <Hero />
       <Features />
-      <Pricing />
       <TeamSection />
       <Footer />
     </div>

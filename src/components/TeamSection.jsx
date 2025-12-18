@@ -11,13 +11,13 @@ import noval from "/src/assets/person/noval.jpg";
 import Zaky from "/src/assets/person/Zaky.jpg";
 
 const team = [
-  { id: 1, name: "Vikri Firdaus", role: "Founder", image: daus },
-  { id: 2, name: "Qisthi Rahman", role: "Human Resource & Development", image: qisthi },
-  { id: 3, name: "Ela Nur Ajijah", role: "Marketing Specialist", image: ela },
-  { id: 4, name: "Marina Cinta Mentari", role: "Graphic Designer", image: arin },
-  { id: 5, name: "Siti Nur Komariah", role: "Operations Staff", image: kokom },
-  { id: 6, name: "Nauval Ramadan", role: "Operations Staff", image: noval },
-  { id: 7, name: "Zaky Aulia Qolbi", role: "Full-Stack Developer", image: Zaky }
+  { id: 1, name: "FIrdaus", role: "Founder", image: daus },
+  { id: 2, name: "Qisthi", role: "Human Resource & Development", image: qisthi },
+  { id: 3, name: "Ela", role: "Marketing Specialist", image: ela },
+  { id: 4, name: "Marina", role: "Graphic Designer", image: arin },
+  { id: 5, name: "Siti", role: "Operations Staff", image: kokom },
+  { id: 6, name: "Nauval", role: "Operations Staff", image: noval },
+  { id: 7, name: "Zaky", role: "Full-Stack Developer", image: Zaky }
 ];
 
 const TeamSection = () => {
@@ -29,12 +29,30 @@ const TeamSection = () => {
   return (
     <section className="team-section-halimoon">
       <Reveal delay={100}>
-        <h2 className="team-title-halimoon">Our Team</h2>
+        <div className="section-badge">
+          👥 Tim Profesional
+        </div>
       </Reveal>
 
-      <Reveal delay={200}>
+      <Reveal delay={140}>
+        <h2 className="team-title-halimoon">Tim Kami</h2>
+      </Reveal>
+
+      <Reveal delay={180}>
+        <p className="team-subtitle">
+          Bertemu dengan para profesional berpengalaman yang siap membantu kesuksesan bisnis Anda
+        </p>
+      </Reveal>
+
+      <Reveal delay={220}>
         <div className="carousel-wrapper-halimoon">
-          <button className="carousel-btn-halimoon left" onClick={prev}>‹</button>
+          <button 
+            className="carousel-btn-halimoon left" 
+            onClick={prev}
+            aria-label="Previous team member"
+          >
+            ‹
+          </button>
           <div className="carousel-halimoon">
             {team.map((person, index) => {
               const offset = index - activeIndex;
@@ -55,7 +73,13 @@ const TeamSection = () => {
               );
             })}
           </div>
-          <button className="carousel-btn-halimoon right" onClick={next}>›</button>
+          <button 
+            className="carousel-btn-halimoon right" 
+            onClick={next}
+            aria-label="Next team member"
+          >
+            ›
+          </button>
         </div>
       </Reveal>
     </section>

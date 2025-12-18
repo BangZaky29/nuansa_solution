@@ -12,9 +12,7 @@ const Pricing = () => {
 
   const plans = [
     {
-      // name: "CV",
       poster: poster_01,
-      color: "#FF6B6B",
       features: [
         "5 Halaman Website",
         "Domain .com Gratis",
@@ -25,9 +23,7 @@ const Pricing = () => {
       recommended: false
     },
     {
-      // name: "Firma",
       poster: poster_02,
-      color: "#4ECDC4",
       features: [
         "10 Halaman Website",
         "Domain Premium Gratis",
@@ -40,9 +36,7 @@ const Pricing = () => {
       recommended: true
     },
     {
-      // name: "Izin Properti",
       poster: poster_03,
-      color: "#95E1D3",
       features: [
         "Unlimited Halaman",
         "Domain Premium Gratis",
@@ -81,13 +75,22 @@ const Pricing = () => {
     <section className="pricing" id="harga">
       <div className="container">
         <div className="carousel-header">
-          <h2>Paket Harga</h2>
-          <p className="carousel-subtitle">Pilih paket yang sesuai dengan kebutuhan bisnis Anda</p>
+          <div className="section-badge">
+            💎 Paket Pilihan
+          </div>
+          <h2>Pilih Paket yang Tepat</h2>
+          <p className="carousel-subtitle">
+            Berbagai pilihan paket yang disesuaikan dengan kebutuhan dan budget bisnis Anda
+          </p>
         </div>
 
         <div className="carousel-container" ref={containerRef}>
           {/* Left Navigation Button */}
-          <button className="carousel-nav-btn left" onClick={goToPrevious}>
+          <button 
+            className="carousel-nav-btn left" 
+            onClick={goToPrevious}
+            aria-label="Previous package"
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
@@ -120,18 +123,15 @@ const Pricing = () => {
                   <div className="card-image-wrapper">
                     <img 
                       src={plan.poster} 
-                      alt={plan.name}
+                      alt={`Package ${index + 1}`}
                       className="card-poster-image"
                     />
-                    <div className="card-name-overlay">
-                      <h3>{plan.name}</h3>
-                    </div>
                   </div>
 
                   {/* Card Content */}
                   <div className="card-content">
-                    <h4 className="card-title">{plan.name}</h4>
-                    <p className="card-subtitle">PACKAGE</p>
+                    <h4 className="card-title">Paket {index + 1}</h4>
+                    <p className="card-subtitle">WEBSITE PACKAGE</p>
                     
                     {position === 'activeSlide' && (
                       <div className="card-features-preview">
@@ -150,7 +150,11 @@ const Pricing = () => {
           </div>
 
           {/* Right Navigation Button */}
-          <button className="carousel-nav-btn right" onClick={goToNext}>
+          <button 
+            className="carousel-nav-btn right" 
+            onClick={goToNext}
+            aria-label="Next package"
+          >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
@@ -164,24 +168,23 @@ const Pricing = () => {
               key={index}
               className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => goToSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Go to package ${index + 1}`}
             />
           ))}
         </div>
       </div>
 
-      {/* Modal for Full Poster Only */}
+      {/* Modal for Full Poster */}
       {selectedImage && (
-        <div className="modal-overlay" onClick={closeModal} style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+        <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content-carousel" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" onClick={closeModal}>×</button>
             
             <div className="modal-body">
-              {/* Modal Image Only */}
               <div className="modal-image-wrapper">
                 <img 
                   src={selectedImage.poster} 
-                  alt={selectedImage.name}
+                  alt="Package details"
                   className="modal-poster-image"
                 />
               </div>
