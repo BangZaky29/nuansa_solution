@@ -11,7 +11,7 @@ import noval from "/src/assets/person/noval.jpg";
 import Zaky from "/src/assets/person/Zaky.jpg";
 
 const team = [
-  { id: 1, name: "FIrdaus", role: "Founder", image: daus },
+  { id: 1, name: "Firdaus", role: "Founder", image: daus },
   { id: 2, name: "Qisthi", role: "Human Resource & Development", image: qisthi },
   { id: 3, name: "Ela", role: "Marketing Specialist", image: ela },
   { id: 4, name: "Marina", role: "Graphic Designer", image: arin },
