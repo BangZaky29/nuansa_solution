@@ -71,7 +71,9 @@ const Hero = () => {
               </a>
               <a 
                 className="btn-secondary"
-                href="#harga"
+                href="https://payment.nuansasolution.id/"
+                target="_blank"
+                rel="noreferrer"
               >
                 Lihat Paket Harga
               </a>

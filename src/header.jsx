@@ -25,34 +25,7 @@ const Header = () => {
           <nav>
             <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
               <li><a href="#home">Home</a></li>
-              <li 
-                className={`dropdown ${servicesOpen ? 'open' : ''}`}
-              >
-                <a 
-                  href="#tentang" 
-                  className="dropdown-toggle"
-                  onClick={(e) => { e.preventDefault(); setServicesOpen(v => !v); }}
-                >
-                  Layanan ▾
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a href="https://nuansa-legal-generator-surat-kuasa-navy.vercel.app/" target="_blank" rel="noreferrer">
-                      📄 Generator Surat Kuasa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://kalkulator-pph-three.vercel.app/" target="_blank" rel="noreferrer">
-                      🧮 Kalkulator PPh
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://kalkulator-pajak-properti-w3ie.vercel.app/" target="_blank" rel="noreferrer">
-                      🏠 Kalkulator Pajak Properti
-                    </a>
-                  </li>
-                </ul>
-              </li>
+              <li><a href="https://payment.nuansasolution.id" target="_blank" rel="noopener noreferrer">Layanan</a></li>
               <li><a href="#fitur">Fitur</a></li>
               <li><a href="#harga">Harga</a></li>
               <li><a href="#kontak">Kontak</a></li>
