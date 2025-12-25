@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import LogoHalimoon from './assets/NS_blank_02.png';
 import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
+import { getWhatsAppLink } from "./utils/whatsapp";
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,9 +32,9 @@ const Header = () => {
               <li><a href="#harga">Harga</a></li>
               <li><a href="#kontak">Kontak</a></li>
               <li>
-                <a 
+                <a
                   className="btn-primary"
-                  href="https://wa.me/6288294096100?text=hallo%20kak..Apakah%20dengan%20konsultasi%20Pembuatas%20Website%20PT.%20Nuansa%20Legal%3F"
+                  href={getWhatsAppLink("6285775080888")}
                   target="_blank"
                   rel="noreferrer"
                 >

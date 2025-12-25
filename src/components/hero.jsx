@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Reveal from '../reveal';
+import { getWhatsAppLink } from "../utils/whatsapp";
 
 // Import gambar lokal
 import our1 from "/src/assets/our/our_01.jpg";
@@ -58,17 +59,25 @@ const Hero = () => {
               mengembangkan bisnis Anda di era digital.
             </p>
             <div className="hero-cta">
-              <a 
+              <a
                 className="btn-primary"
-                href="https://wa.me/6288294096100?text=Halo%20kak,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20website%20dari%20Nuansa%20Solution"
+                href={getWhatsAppLink("6285775080888")}
                 target="_blank"
                 rel="noreferrer"
               >
                 <span>Konsultasi Gratis</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
+
               <a 
                 className="btn-secondary"
                 href="https://payment.nuansasolution.id/"

@@ -75,13 +75,10 @@ const App = () => {
   /* ===============================
      WhatsApp Dynamic Message
   ================================ */
-  const phoneNumber = '6288213728307';
-
+  const phoneNumber = '6285775080888';
   const waMessage = `
-    Halo Admin Nuansa Solution 👋
-    Saya ingin konsultasi layanan.
+    Hallo kak. Saya dapat informasi dari website nuansasolution.id. Saya mau konsultasi mengenai layanan Nuansa Solution.
   `;
-
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     waMessage
   )}`;
