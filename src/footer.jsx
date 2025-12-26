@@ -113,7 +113,6 @@ const Footer = () => {
 
         <div className="footer-copyright">
           <p>
-            <Link to="/" style={{ marginRight: 12, textDecoration: 'underline' }}>Home</Link>
             &copy; 2022 Nuansa Solution. All rights reserved. 
             <span style={{ display: 'inline-block', margin: '0 8px' }}>|</span>
             Built with ❤️ by Nuansa Legal Team
