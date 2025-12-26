@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Import Components
 import Header from './header';
@@ -7,6 +8,7 @@ import Features from './components/features';
 import Pricing from './components/pricing';
 import TeamSection from './components/TeamSection';
 import Footer from './footer';
+import IndustryPage from './industries/IndustryPage';
 
 // Import Styles
 import './styles/main.css';
@@ -15,42 +17,28 @@ import './styles/pricing.css';
 import './styles/TeamSection.css';
 import './App.css';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+};
+
+const HomePage = () => (
+  <main id="main-content">
+    <Hero />
+    <Features />
+    <TeamSection />
+  </main>
+);
+
 const App = () => {
 
   /* ===============================
      Smooth Scroll Anchor
   ================================ */
-  useEffect(() => {
-    const handleAnchorClick = (e) => {
-      const href = e.currentTarget.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          const headerOffset = 80;
-          const elementPosition = target.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
-        }
-      }
-    };
-
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    anchorLinks.forEach((link) =>
-      link.addEventListener('click', handleAnchorClick)
-    );
-
-    return () => {
-      anchorLinks.forEach((link) =>
-        link.removeEventListener('click', handleAnchorClick)
-      );
-    };
-  }, []);
+  // Hapus handler anchor & querySelector (menggunakan react-router)
 
   /* ===============================
      Scroll To Top Button
@@ -83,15 +71,18 @@ const App = () => {
     waMessage
   )}`;
 
+  // Hapus hash routing; diganti Router dengan Routes
+
   return (
-    <>
+    <BrowserRouter>
+      <ScrollToTop />
       <div className="app-opening">
         <Header />
-        <main id="main-content">
-          <Hero />
-          <Features />
-          <TeamSection />
-        </main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/industri/:slug" element={<IndustryPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
         <Footer />
       </div>
 
@@ -186,7 +177,7 @@ const App = () => {
       >
         ↑
       </button>
-    </>
+    </BrowserRouter>
   );
 };
 

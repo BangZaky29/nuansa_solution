@@ -346,3 +346,49 @@ p {
     font-size: 16px;
   }
 }
+
+/* ==========================================
+   INDUSTRY PAGE
+   ========================================== */
+.industry-page {
+  background: white;
+  padding-top: calc(var(--header-height) + 60px);
+  padding-bottom: 80px;
+}
+
+.industry-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.industry-text h1 {
+  margin-bottom: 12px;
+}
+
+.industry-text h4 {
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+
+.industry-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.industry-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.industry-image img {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-2xl);
+  background: white;
+}

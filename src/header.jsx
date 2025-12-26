@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import LogoHalimoon from './assets/NS_blank_02.png';
 import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
 import { getWhatsAppLink } from "./utils/whatsapp";
+import IndustriesMegaMenu from './industries/IndustriesMegaMenu';
 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
 
   return (
     <header className="header">
       <div className="container">
         <div className="header-content">
           <div className="logo-container">
-            <a href="#home" className="logo">
+            <Link to="/" className="logo">
               <img src={LogoHalimoon} alt="Halimoon" className="logo-halimoon" />
-            </a>
+            </Link>
             <p>
               Support
               <a href="https://www.nuansalegal.id/" target="_blank" rel="noopener noreferrer">
@@ -26,11 +28,25 @@ const Header = () => {
           </div>
           <nav>
             <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-              <li><a href="#home">Home</a></li>
+              <li><NavLink to="/" onClick={() => setIndustriesOpen(false)}>Home</NavLink></li>
+              <li className={`mega ${industriesOpen ? 'open' : ''}`}>
+                <button 
+                  type="button"
+                  className="mega-trigger nav-link-like"
+                  onClick={() => setIndustriesOpen((v) => !v)}
+                  aria-expanded={industriesOpen ? 'true' : 'false'}
+                  aria-controls="mega-industries"
+                >
+                  Industri-industri
+                </button>
+                <IndustriesMegaMenu 
+                  onItemClick={() => setIndustriesOpen(false)} 
+                />
+              </li>
               <li><a href="https://payment.nuansasolution.id" target="_blank" rel="noopener noreferrer">Layanan</a></li>
-              <li><a href="#fitur">Fitur</a></li>
-              <li><a href="#harga">Harga</a></li>
-              <li><a href="#kontak">Kontak</a></li>
+              <li><NavLink to="/">Fitur</NavLink></li>
+              <li><NavLink to="/">Harga</NavLink></li>
+              <li><NavLink to="/">Kontak</NavLink></li>
               <li>
                 <a
                   className="btn-primary"
