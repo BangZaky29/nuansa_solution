@@ -1,4 +1,5 @@
 import React from 'react';
+import KBLIPdf from '../assets/doc/KBLI_2025_NUANSA LEGAL.pdf';
 
 // Simple SVG Icons
 const Icons = {
@@ -96,6 +97,7 @@ const Icons = {
 };
 
 export const SERVICES_LIST = [
+  { id: 5, title: "KBLI 2025", icon: Icons.fileText, url: KBLIPdf, label: "Free Download", isDownload: true },
   { id: 6, title: "Generator Surat Kuasa", icon: Icons.document, url: "https://payment.nuansasolution.id", label: "Subscribe Now!" },
   { id: 7, title: "Kalkulator PPh", icon: Icons.calculator, url: "https://nuansasolution.id/calculator-PPH/", label: "Free Trial" },
   { id: 8, title: "Kalkulator Pajak Properti", icon: Icons.home, url: "https://nuansasolution.id/kalkulator-pajak-properti/", label: "Free Trial" },

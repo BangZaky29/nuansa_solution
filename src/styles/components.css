@@ -1058,6 +1058,11 @@
   color: var(--green-700, #15803d);
 }
 
+.label-download {
+  background: var(--blue-100, #dbeafe);
+  color: var(--blue-700, #1d4ed8);
+}
+
 .label-subscribe {
   background: var(--orange-100, #ffedd5);
   color: var(--orange-700, #c2410c);
