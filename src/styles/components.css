@@ -536,7 +536,7 @@
   height: auto;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-2xl);
-  background: linear-gradient(135deg, rgb(233, 155, 255) 0%, rgb(106, 215, 255) 100%);
+  background: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
   animation: float 4s ease-in-out infinite;
 }
