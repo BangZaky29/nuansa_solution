@@ -274,7 +274,7 @@ p {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
 }
 
@@ -390,5 +390,7 @@ p {
   height: auto;
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-2xl);
-  background: white;
+  background: linear-gradient(135deg, rgb(233, 155, 255) 0%, rgb(106, 215, 255) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: float 4s ease-in-out infinite;
 }

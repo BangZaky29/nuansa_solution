@@ -1,47 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Reveal from '../reveal';
 import { getWhatsAppLink } from "../utils/whatsapp";
 
-// Import gambar lokal
-import our1 from "/src/assets/our/our_01.jpg";
-import our2 from "/src/assets/our/our_02.jpg";
-import our3 from "/src/assets/our/our_03.jpg";
-import our4 from "/src/assets/our/our_04.jpg";
-import our5 from "/src/assets/our/our_05.jpg";
-
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Array foto untuk slideshow
-  const slides = [
-    { id: 1, image: our1, alt: "Our Image 01" },
-    { id: 2, image: our2, alt: "Our Image 02" },
-    { id: 3, image: our3, alt: "Our Image 03" },
-    { id: 4, image: our4, alt: "Our Image 04" },
-    { id: 5, image: our5, alt: "Our Image 05" }
-  ];
-
-  // Auto slide every 5 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [slides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <section className="hero" id="home">
       <div className="container">
@@ -89,46 +50,12 @@ const Hero = () => {
             </div>
           </Reveal>
 
-          {/* Slideshow Section */}
           <Reveal className="hero-image" delay={120}>
-            <div className="slideshow-container">
-              {slides.map((slide, index) => (
-                <div 
-                  key={slide.id}
-                  className={`slide ${index === currentSlide ? 'active' : ''}`}
-                >
-                  <img src={slide.image} alt={slide.alt} />
-                </div>
-              ))}
-
-              {/* Navigation Buttons */}
-              <button 
-                className="slide-nav prev" 
-                onClick={prevSlide}
-                aria-label="Previous slide"
-              >
-                ‹
-              </button>
-              <button 
-                className="slide-nav next" 
-                onClick={nextSlide}
-                aria-label="Next slide"
-              >
-                ›
-              </button>
-
-              {/* Dots */}
-              <div className="slide-dots">
-                {slides.map((_, index) => (
-                  <span 
-                    key={index}
-                    className={`dot ${index === currentSlide ? 'active' : ''}`}
-                    onClick={() => goToSlide(index)}
-                    aria-label={`Go to slide ${index + 1}`}
-                  ></span>
-                ))}
-              </div>
-            </div>
+            <img
+              src="/nuansaLogo.png"
+              alt="Nuansa Solution"
+              className="hero-logo"
+            />
           </Reveal>
 
         </div>

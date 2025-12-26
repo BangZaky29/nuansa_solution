@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Reveal from "../reveal";
 
 // Import foto lokal
@@ -22,9 +22,33 @@ const team = [
 
 const TeamSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const next = () => setActiveIndex((activeIndex + 1) % team.length);
   const prev = () => setActiveIndex((activeIndex - 1 + team.length) % team.length);
+
+  useEffect(() => {
+    if (paused) return;
+    intervalRef.current = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % team.length);
+    }, 4000);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [paused]);
+
+    useEffect(() => {
+      const onVisibility = () => {
+        const hidden = document.hidden;
+        setPaused(hidden);
+      };
+      document.addEventListener("visibilitychange", onVisibility);
+      return () => document.removeEventListener("visibilitychange", onVisibility);
+    }, []);
 
   return (
     <section className="team-section-halimoon">
@@ -45,7 +69,11 @@ const TeamSection = () => {
       </Reveal>
 
       <Reveal delay={220}>
-        <div className="carousel-wrapper-halimoon">
+        <div 
+          className="carousel-wrapper-halimoon"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
           <button 
             className="carousel-btn-halimoon left" 
             onClick={prev}

@@ -87,14 +87,20 @@ const Footer = () => {
               </li>
               <li> 
                 <img src={emailIcon} alt="" className="contact-icon" />
-                <a href="mailto:nuansalegalindonesia@gmail.com">
-                  nuansalegalindonesia@gmail.com
+                <a href="mailto:cs@nuansasolution.id">
+                  cs@nuansasolution.id
                 </a>
               </li>
               <li> 
                 <img src={emailIcon} alt="" className="contact-icon" />
-                <a href="mailto:nuansasolutionofficial@gmail.com">
-                  nuansasolutionofficial@gmail.com
+                <a href="mailto:Info@nuansasolution.id">
+                  Info@nuansasolution.id
+                </a>
+              </li>
+              <li> 
+                <img src={emailIcon} alt="" className="contact-icon" />
+                <a href="mailto:teknis@nuansasolution.id">
+                  teknis@nuansasolution.id
                 </a>
               </li>
               <li>

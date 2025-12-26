@@ -4,11 +4,12 @@ import LogoHalimoon from './assets/NS_blank_02.png';
 import LogoNuansaLegal from './assets/BKBlank_LogoNuansaLegal.png';
 import { getWhatsAppLink } from "./utils/whatsapp";
 import IndustriesMegaMenu from './industries/IndustriesMegaMenu';
-
+import ServicesMegaMenu from './components/ServicesMegaMenu';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header className="header">
@@ -28,12 +29,18 @@ const Header = () => {
           </div>
           <nav>
             <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-              <li><NavLink to="/" onClick={() => setIndustriesOpen(false)}>Home</NavLink></li>
+              <li><NavLink to="/" onClick={() => {
+                setIndustriesOpen(false);
+                setServicesOpen(false);
+              }}>Home</NavLink></li>
               <li className={`mega ${industriesOpen ? 'open' : ''}`}>
                 <button 
                   type="button"
                   className="mega-trigger nav-link-like"
-                  onClick={() => setIndustriesOpen((v) => !v)}
+                  onClick={() => {
+                    setIndustriesOpen((v) => !v);
+                    setServicesOpen(false);
+                  }}
                   aria-expanded={industriesOpen ? 'true' : 'false'}
                   aria-controls="mega-industries"
                 >
@@ -43,10 +50,24 @@ const Header = () => {
                   onItemClick={() => setIndustriesOpen(false)} 
                 />
               </li>
-              <li><a href="https://payment.nuansasolution.id" target="_blank" rel="noopener noreferrer">Layanan</a></li>
-              <li><NavLink to="/">Fitur</NavLink></li>
-              <li><NavLink to="/">Harga</NavLink></li>
-              <li><NavLink to="/">Kontak</NavLink></li>
+              <li className={`mega ${servicesOpen ? 'open' : ''}`}>
+                <button 
+                  type="button"
+                  className="mega-trigger nav-link-like"
+                  onClick={() => {
+                    setServicesOpen((v) => !v);
+                    setIndustriesOpen(false);
+                  }}
+                  aria-expanded={servicesOpen ? 'true' : 'false'}
+                  aria-controls="mega-services"
+                >
+                  Layanan
+                </button>
+                <ServicesMegaMenu 
+                  onItemClick={() => setServicesOpen(false)} 
+                />
+              </li>
+              <li><a href="#kontak">Kontak</a></li>
               <li>
                 <a
                   className="btn-primary"
