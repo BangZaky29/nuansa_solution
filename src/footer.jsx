@@ -25,7 +25,7 @@ const Footer = () => {
               <p>Gedung STC Senayan Lt.3 No.190<br />Jakarta Pusat | 0896-4444-8721</p>
               
               <p><strong>Cabang Bogor:</strong></p>
-              <p>Perumahan Citoh Cluster Halimun Blok H. 7 <br />No. 7, Desa Cibatok 1, Kec. Cibungbulang, <br />Kab. Bogor (16630)</p>
+              <p>Perumahan Citoh Cluster Halimun Blok H No. 7<br />Desa Cibatok 1, Kec. Cibungbulang, <br />Kab. Bogor (16630) | +62 8577-5080-888</p>
               
               <p><strong>Cabang Bandung:</strong></p>
               <p>Komplek Firdaus Garden, Ngamprah<br />Kab. Bandung Barat | 0882-9409-6100</p>
