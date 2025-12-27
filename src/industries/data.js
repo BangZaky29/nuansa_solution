@@ -83,7 +83,7 @@ export const INDUSTRY_CATEGORIES = [
     color: '#06b6d4',
     items: [
       { slug: 'firma-akuntansi', name: 'Firma Akuntansi' },
-      { slug: 'mitra-odoo', name: 'Mitra Odoo' },
+      { slug: 'mitra-nuansa-solution', name: 'Mitra Nuansa Solution' },
       { slug: 'agensi-marketing', name: 'Agensi Marketing' },
       { slug: 'firma-hukum', name: 'Firma hukum' },
       { slug: 'talent-acquisition', name: 'Talent Acquisition' },

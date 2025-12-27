@@ -25,7 +25,7 @@ const Footer = () => {
               <p>Gedung STC Senayan Lt.3 No.190<br />Jakarta Pusat | 0896-4444-8721</p>
               
               <p><strong>Cabang Bogor:</strong></p>
-              <p>Perum Citoh Cluster Halimun J4<br />Bogor | 0858-8343-7514</p>
+              <p>Perumahan Citoh Cluster Halimun Blok H. 7 <br />No. 7, Desa Cibatok 1, Kec. Cibungbulang, <br />Kab. Bogor (16630)</p>
               
               <p><strong>Cabang Bandung:</strong></p>
               <p>Komplek Firdaus Garden, Ngamprah<br />Kab. Bandung Barat | 0882-9409-6100</p>
@@ -94,7 +94,7 @@ const Footer = () => {
               <li> 
                 <img src={emailIcon} alt="" className="contact-icon" />
                 <a href="mailto:Info@nuansasolution.id">
-                  Info@nuansasolution.id
+                  info@nuansasolution.id
                 </a>
               </li>
               <li> 
