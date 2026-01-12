@@ -1,0 +1,75 @@
+
+.mega-dropdown {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #f9fafb;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.service-card:hover {
+  background: #0d44f8;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ⬅️ Tambahkan ini */
+}
+
+.service-title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.service-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  width: fit-content;
+}
+
+.label-free {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.label-download {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.label-subscribe {
+  background: #fce7f3;
+  color: #9d174d;
+}

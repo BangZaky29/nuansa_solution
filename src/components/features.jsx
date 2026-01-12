@@ -17,9 +17,9 @@ const Features = () => {
     },
     {
       icon: "🏠",
-      title: "Jual Beli Properti",
+      title: "IT SOLUTION",
       description:
-        "Pendampingan transaksi jual beli properti yang aman, transparan, dan legal dengan proses administrasi yang terpercaya."
+        "Solusi IT yang terintegrasi untuk mendukung operasional bisnis, pengelolaan data, dan pengembangan aplikasi yang efisien."
     },
     {
       icon: "🧮",

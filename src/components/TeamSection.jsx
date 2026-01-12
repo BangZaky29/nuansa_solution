@@ -14,7 +14,7 @@ const team = [
   { id: 1, name: "Firdaus", role: "Founder", image: daus },
   { id: 2, name: "Qisthi", role: "Human Resource & Development", image: qisthi },
   { id: 3, name: "Ela", role: "Marketing Specialist", image: ela },
-  { id: 4, name: "Marina", role: "Graphic Designer", image: arin },
+  { id: 4, name: "Cinta Marina", role: "Content Creator", image: arin },
   { id: 5, name: "Siti", role: "Operations Staff", image: kokom },
   { id: 6, name: "Nauval", role: "Operations Staff", image: noval },
   { id: 7, name: "Zaky", role: "Full-Stack Developer", image: Zaky }
