@@ -12,12 +12,8 @@ import Zaky from "/src/assets/person/Zaky.jpg";
 
 const team = [
   { id: 1, name: "Firdaus", role: "Founder", image: daus },
-  { id: 2, name: "Qisthi", role: "Human Resource & Development", image: qisthi },
-  { id: 3, name: "Ela", role: "Marketing Specialist", image: ela },
-  { id: 4, name: "Cinta Marina", role: "Content Creator", image: arin },
-  { id: 5, name: "Siti", role: "Operations Staff", image: kokom },
-  { id: 6, name: "Nauval", role: "Operations Staff", image: noval },
-  { id: 7, name: "Zaky", role: "Full-Stack Developer", image: Zaky }
+  { id: 2, name: "Ela", role: "Admin Support", image: ela },
+  { id: 3, name: "Cinta Marina", role: "Marketing", image: arin }
 ];
 
 const TeamSection = () => {
@@ -41,14 +37,14 @@ const TeamSection = () => {
     };
   }, [paused]);
 
-    useEffect(() => {
-      const onVisibility = () => {
-        const hidden = document.hidden;
-        setPaused(hidden);
-      };
-      document.addEventListener("visibilitychange", onVisibility);
-      return () => document.removeEventListener("visibilitychange", onVisibility);
-    }, []);
+  useEffect(() => {
+    const onVisibility = () => {
+      const hidden = document.hidden;
+      setPaused(hidden);
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, []);
 
   return (
     <section className="team-section-halimoon">
@@ -69,13 +65,13 @@ const TeamSection = () => {
       </Reveal>
 
       <Reveal delay={220}>
-        <div 
+        <div
           className="carousel-wrapper-halimoon"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <button 
-            className="carousel-btn-halimoon left" 
+          <button
+            className="carousel-btn-halimoon left"
             onClick={prev}
             aria-label="Previous team member"
           >
@@ -101,8 +97,8 @@ const TeamSection = () => {
               );
             })}
           </div>
-          <button 
-            className="carousel-btn-halimoon right" 
+          <button
+            className="carousel-btn-halimoon right"
             onClick={next}
             aria-label="Next team member"
           >

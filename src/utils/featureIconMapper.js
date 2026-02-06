@@ -1,13 +1,8 @@
-// src/utils/featureIconMapper.js
 import { Icons } from './services-data-icons';
 
-export const mapFeatureIcon = (iconOrCode = '') => {
-  const normalized = iconOrCode.toLowerCase();
+export const mapFeatureIcon = (code = '') => {
+  const normalized = code.toLowerCase();
 
-  // PRIORITAS ICON EXPLICIT
-  if (Icons[normalized]) return Icons[normalized]();
-
-  // FALLBACK BERDASARKAN CODE
   if (normalized.includes('calculator')) return Icons.calculator();
   if (normalized.includes('invoice')) return Icons.dollar();
   if (normalized.includes('jalan')) return Icons.truck();
@@ -19,6 +14,8 @@ export const mapFeatureIcon = (iconOrCode = '') => {
   if (normalized.includes('pernyataan')) return Icons.pen();
   if (normalized.includes('perjanjian')) return Icons.document();
   if (normalized.includes('slip-gaji')) return Icons.receipt();
+
+  // fallback untuk fitur baru bertema surat
   if (normalized.includes('surat')) return Icons.document();
 
   return Icons.fileText();

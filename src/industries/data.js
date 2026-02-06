@@ -102,6 +102,17 @@ export const INDUSTRY_CATEGORIES = [
       { slug: 'penyewaan-sepeda', name: 'Penyewaan Sepeda' },
       { slug: 'reseller-software', name: 'Reseller Software' }
     ]
+  },
+  {
+    id: 'solusi-digital',
+    label: 'SOLUSI DIGITAL',
+    color: '#3b82f6',
+    items: [
+      { slug: 'crm', name: 'CRM' },
+      { slug: 'erp', name: 'ERP' },
+      { slug: 'pos-kasir', name: 'POS Kasir' },
+      { slug: 'it-solution', name: 'IT SOLUTION' }
+    ]
   }
 ];
 

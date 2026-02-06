@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import Reveal from './reveal';
 import IconEmail from './assets/sosialMedia/email.png';
 import IconInstagram from './assets/sosialMedia/instagram.png';
@@ -15,40 +13,40 @@ const Footer = () => {
     <footer className="footer" id="kontak" role="contentinfo">
       <div className="container">
         <div className="footer-content">
-          
+
           <Reveal className="footer-section footer-brand" delay={40}>
             <img src={LogoBrand} alt="Nuansa Solution" className="footer-logo" />
             <div className="footer-company">
               <h4>PT. NUANSA BERKAH SEJAHTERA</h4>
-              
+
               <p><strong>Cabang Jakarta:</strong></p>
               <p>Gedung STC Senayan Lt.3 No.190<br />Jakarta Pusat | 0896-4444-8721</p>
-              
+
               <p><strong>Cabang Bogor:</strong></p>
               <p>Perumahan Citoh Cluster Halimun Blok H No. 7<br />Desa Cibatok 1, Kec. Cibungbulang, <br />Kab. Bogor (16630) | +62 8577-5080-888</p>
-              
+
               <p><strong>Cabang Bandung:</strong></p>
               <p>Komplek Firdaus Garden, Ngamprah<br />Kab. Bandung Barat | 0882-9409-6100</p>
             </div>
-            
+
             <div className="footer-social-icons" role="navigation" aria-label="Social media links">
-              <a 
-                href="https://www.instagram.com/nuansalegal.id/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/nuansalegal.id/"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit our Instagram"
               >
                 <img src={IconInstagram} alt="" />
               </a>
-              <a 
-                href="https://www.tiktok.com/@nuansalegal.id?lang=id-ID" 
-                target="_blank" 
+              <a
+                href="https://www.tiktok.com/@nuansalegal.id?lang=id-ID"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit our TikTok"
               >
                 <img src={IconTiktok} alt="" />
               </a>
-              <a 
+              <a
                 href="mailto:cs@nuansalegal.id"
                 aria-label="Send us an email"
               >
@@ -85,19 +83,19 @@ const Footer = () => {
                 <img src={phoneIcon} alt="" className="contact-icon" />
                 <a href="tel:+6289644448721">0896-4444-8721</a>
               </li>
-              <li> 
+              <li>
                 <img src={emailIcon} alt="" className="contact-icon" />
                 <a href="mailto:cs@nuansasolution.id">
                   cs@nuansasolution.id
                 </a>
               </li>
-              <li> 
+              <li>
                 <img src={emailIcon} alt="" className="contact-icon" />
                 <a href="mailto:Info@nuansasolution.id">
                   info@nuansasolution.id
                 </a>
               </li>
-              <li> 
+              <li>
                 <img src={emailIcon} alt="" className="contact-icon" />
                 <a href="mailto:teknis@nuansasolution.id">
                   teknis@nuansasolution.id
@@ -113,7 +111,7 @@ const Footer = () => {
 
         <div className="footer-copyright">
           <p>
-            &copy; 2022 Nuansa Solution. All rights reserved. 
+            &copy; 2022 Nuansa Solution. All rights reserved.
             <span style={{ display: 'inline-block', margin: '0 8px' }}>|</span>
             Built with ❤️ by Nuansa Legal Team
           </p>
