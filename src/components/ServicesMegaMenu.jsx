@@ -4,114 +4,179 @@ import useServices from "./services-data";
 import "../styles/services.css";
 
 // 1. Definisikan Kategori Utama
-const CATEGORIES = [
-  { id: "generator", label: "Generator Surat", icon: "📝" },
-  { id: "calculator", label: "Calculator", icon: "🧮" },
-  { id: "document", label: "Document", icon: "📄" },
-  { id: "crm", label: "CRM", icon: "👥" },
-  { id: "akuntansi", label: "Akuntansi", icon: "📒" },
-  { id: "erp", label: "ERP", icon: "📊" },
-  { id: "pos-kasir", label: "POS Kasir", icon: "🏪" },
-  { id: "it-solution", label: "IT SOLUTION", icon: "💻" },
+// Hardcoded structure based on user request
+const MENU_GROUPS = [
+  {
+    title: "Generator Surat Legal",
+    icon: "⚖️",
+    items: [
+      "Generator Surat Kuasa",
+      "Generator Surat Pernyataan",
+      "Generator Surat Permohonan",
+      "Generator Surat Perintah Kerja",
+      "Generator Surat Jalan",
+      "Generator Surat Keterangan Kerja",
+      "Generator Surat Berita Acara"
+    ]
+  },
+  {
+    title: "Dokumen Operasional & Bisnis",
+    icon: "💼",
+    items: [
+      "Generator Invoice",
+      "Generator Surat Penawaran",
+      "Generator Surat Perjanjian Sewa",
+      "Generator Surat Kontrak Sewa Kantor",
+      "Generator Surat Perjanjian Jual Beli",
+      "Generator Surat Tanda Terima",
+      "Generator Laporan Rekap Data Konsumen",
+      "Generator Laporan Bisnis Keuangan Perusahaan Jasa",
+      "Custom Letter Generator"
+    ]
+  },
+  {
+    title: "Keuangan & HR Tools",
+    icon: "💰",
+    items: [
+      "Generator Slip Gaji",
+      "Kalkulator PPH",
+      "Kalkulator Pajak Properti",
+      "Pencatatan Uang Masuk & Uang Keluar",
+      "Aplikasi Pos Kasir",
+      "Aplikasi CRM",
+      "Aplikasi ERP",
+      "Aplikasi Akuntansi Perusahaan",
+      "E-learning (Sekolah, Universitas dan Instansi)"
+    ]
+  }
 ];
 
 const ServicesMegaMenu = ({ onItemClick }) => {
   const navigate = useNavigate();
   const services = useServices();
-  const [activeCategory, setActiveCategory] = useState("generator");
 
-  const handleCategoryClick = (catId) => {
-    // Kategori yang memiliki list card sendiri
-    if (["generator", "akuntansi", "calculator", "document"].includes(catId)) {
-      setActiveCategory(catId);
-    } else {
-      // Navigasi langsung untuk kategori lainnya
-      onItemClick && onItemClick();
-      navigate(`/industri/${catId}`);
-    }
+  // Mapping for items that should behave like Industry links
+  const INDUSTRY_LINKS = {
+    "Pencatatan Uang Masuk & Uang Keluar": "/industri/pencatatan-keuangan",
+    "Aplikasi Pos Kasir": "/industri/pos-kasir",
+    "Aplikasi CRM": "/industri/crm",
+    "Aplikasi ERP": "/industri/erp",
+    "E-learning (Sekolah, Universitas dan Instansi)": "/industri/e-learning"
   };
 
-  // Filter logic
-  const accountingServices = services.filter((s) => s.title === "Akuntansi");
-  const calculatorServices = services.filter((s) =>
-    s.title.toLowerCase().includes("kalkulator")
-  );
-  const documentServices = services.filter((s) =>
-    s.title.toLowerCase().includes("kbli")
-  );
+  // Helper to find service URL
+  const getServiceData = (title) => {
+    // Basic fuzzy match or direct match
+    const found = services.find(s =>
+      s.title.toLowerCase() === title.toLowerCase() ||
+      s.title.toLowerCase().includes(title.toLowerCase())
+    );
 
-  // Generator = Semua services KECUALI yang sudah masuk kategori lain
-  const generatorServices = services.filter((s) =>
-    s.title !== "Akuntansi" &&
-    !s.title.toLowerCase().includes("kalkulator") &&
-    !s.title.toLowerCase().includes("kbli")
-  );
-
-  let displayedServices = [];
-  if (activeCategory === "akuntansi") displayedServices = accountingServices;
-  else if (activeCategory === "calculator") displayedServices = calculatorServices;
-  else if (activeCategory === "document") displayedServices = documentServices;
-  else displayedServices = generatorServices;
+    // Default fallback
+    return found || {
+      url: "https://payment.nuansasolution.id/register",
+      icon: "📄"
+    };
+  };
 
   return (
     <div className="mega-dropdown">
-      {/* 2. Top Grid Buttons */}
-      <div className="services-category-grid">
-        {CATEGORIES.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => handleCategoryClick(cat.id)}
-            className={`category-btn ${activeCategory === cat.id ? "active" : ""}`}
-          >
-            <span className="category-icon">{cat.icon}</span>
-            <span className="category-label">
-              {cat.label}
-            </span>
-          </button>
+      <div className="services-mega-layout" style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '2rem',
+        padding: '2rem',
+        maxHeight: '80vh',
+        overflowY: 'auto'
+      }}>
+        {MENU_GROUPS.map((group, idx) => (
+          <div key={idx} className="service-group">
+            <div className="group-header" style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              marginBottom: '1rem',
+              padding: '0.75rem',
+              backgroundColor: '#eff6ff', // blue-50
+              borderRadius: '0.5rem',
+              color: '#1e40af', // blue-800
+              fontWeight: 'bold'
+            }}>
+              <span style={{ fontSize: '1.25rem' }}>{group.icon}</span>
+              <h3 style={{ margin: 0, fontSize: '1rem' }}>{group.title}</h3>
+            </div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              {group.items.map((item) => {
+                const isIndustryLink = INDUSTRY_LINKS[item];
+                const service = getServiceData(item);
+
+                // Content common to both link types
+                const content = (
+                  <>
+                    <span>{service.icon || '📄'}</span>
+                    <span>{item}</span>
+                  </>
+                );
+
+                const linkStyle = {
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.75rem',
+                  padding: '0.5rem',
+                  borderRadius: '0.375rem',
+                  color: '#475569',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s',
+                  fontSize: '0.9rem',
+                  cursor: 'pointer'
+                };
+
+                return (
+                  <li key={item} style={{ marginBottom: '0.5rem' }}>
+                    {isIndustryLink ? (
+                      <div
+                        onClick={() => {
+                          onItemClick && onItemClick();
+                          navigate(isIndustryLink);
+                        }}
+                        className="service-link"
+                        style={linkStyle}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#f1f5f9';
+                          e.currentTarget.style.color = '#2563eb';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = '#475569';
+                        }}
+                      >
+                        {content}
+                      </div>
+                    ) : (
+                      <a
+                        href={service.url}
+                        className="service-link"
+                        onClick={onItemClick}
+                        style={linkStyle}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#f1f5f9';
+                          e.currentTarget.style.color = '#2563eb';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = '#475569';
+                        }}
+                      >
+                        {content}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         ))}
       </div>
-
-      {/* 3. Content Area */}
-      {["generator", "akuntansi", "calculator", "document"].includes(activeCategory) && (
-        <div className="services-grid">
-          {displayedServices.length > 0 ? (
-            displayedServices.map((service) => (
-              <a
-                key={service.id}
-                href={service.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                download={service.isDownload ? true : undefined}
-                className="service-card"
-                onClick={onItemClick}
-              >
-                <div className="service-icon">{service.icon}</div>
-                <div className="service-info">
-                  <span className="service-title">{service.title}</span>
-                  <span
-                    className={`service-label ${service.label === "Free Trial"
-                      ? "label-free"
-                      : service.label === "Free Download"
-                        ? "label-download"
-                        : "label-subscribe"
-                      }`}
-                  >
-                    {service.label}
-                  </span>
-                </div>
-              </a>
-            ))) : (
-            <div style={{
-              gridColumn: "1 / -1",
-              textAlign: "center",
-              padding: "2rem",
-              color: "#64748b"
-            }}>
-              Layanan belum tersedia.
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };

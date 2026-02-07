@@ -111,7 +111,9 @@ export const INDUSTRY_CATEGORIES = [
       { slug: 'crm', name: 'CRM' },
       { slug: 'erp', name: 'ERP' },
       { slug: 'pos-kasir', name: 'POS Kasir' },
-      { slug: 'it-solution', name: 'IT SOLUTION' }
+      { slug: 'pencatatan-keuangan', name: 'Pencatatan Keuangan' },
+      { slug: 'it-solution', name: 'IT SOLUTION' },
+      { slug: 'e-learning', name: 'E-Learning' }
     ]
   }
 ];
