@@ -589,12 +589,27 @@
   gap: 40px;
   position: relative;
   z-index: 1;
+  align-items: stretch;
+}
+
+.features-grid .reveal {
+  display: flex;
+  height: 100%;
 }
 
 .feature-card {
   text-align: center;
   padding: 48px 32px;
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+
+.feature-card p {
+  flex-grow: 1;
 }
 
 .feature-icon {
