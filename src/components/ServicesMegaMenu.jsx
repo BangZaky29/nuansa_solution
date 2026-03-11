@@ -15,7 +15,7 @@ const MENU_GROUPS = [
       {
         name: "Warlok - Warga Lokal",
         logo: warlokLogo,
-        url: "https://warlok.nuansasolution.id/",
+        url: "https://warlok-website.nuansasolution.id/",
         description: "Solusi Manajemen Lingkungan Digital"
       }
     ]
