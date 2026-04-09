@@ -45,7 +45,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Lihat Paket Harga
+                Lihat Generator Surat
               </a>
             </div>
           </Reveal>
