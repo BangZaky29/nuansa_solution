@@ -88,7 +88,7 @@ const ServicesMegaMenu = ({ onItemClick }) => {
 
     // Default fallback
     return found || {
-      url: "https://payment.nuansasolution.id/register",
+      url: "https://generator.nuansasolution.id/register",
       icon: "📄"
     };
   };

@@ -7,7 +7,7 @@ import { Icons } from "../utils/services-data-icons.jsx";
 
 
 
-const PAYMENT_URL = "https://payment.nuansasolution.id";
+const PAYMENT_URL = "https://generator.nuansasolution.id";
 
 export default function useServices() {
   const [services, setServices] = useState([]);

@@ -41,7 +41,7 @@ const Hero = () => {
 
               <a 
                 className="btn-secondary"
-                href="https://payment.nuansasolution.id/"
+                href="https://generator.nuansasolution.id/"
                 target="_blank"
                 rel="noreferrer"
               >
