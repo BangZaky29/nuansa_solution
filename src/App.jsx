@@ -9,6 +9,8 @@ import Pricing from './components/pricing';
 import TeamSection from './components/TeamSection';
 import Footer from './footer';
 import IndustryPage from './industries/IndustryPage';
+import SertifikasiSection from './components/SertifikasiSection';
+import Verifikasi from './pages/Verifikasi';
 
 // Import Styles
 import './styles/main.css';
@@ -29,6 +31,7 @@ const HomePage = () => (
   <main id="main-content">
     <Hero />
     <Features />
+    <SertifikasiSection />
     <TeamSection />
   </main>
 );
@@ -81,6 +84,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/industri/:slug" element={<IndustryPage />} />
+          <Route path="/verifikasi" element={<Verifikasi />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />
