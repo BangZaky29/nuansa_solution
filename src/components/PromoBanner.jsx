@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import Reveal from '../reveal';
 import { getWhatsAppLink } from '../utils/whatsapp';
@@ -126,8 +127,8 @@ const PromoBanner = () => {
         </div>
       </div>
 
-      {/* Modal Full Poster */}
-      {showModal && (
+      {/* Modal via Portal — rendered outside section to avoid transform issues */}
+      {showModal && createPortal(
         <div className="promo-modal-overlay" onClick={() => setShowModal(false)}>
           <motion.div
             className="promo-modal-content"
@@ -141,7 +142,7 @@ const PromoBanner = () => {
               onClick={() => setShowModal(false)}
               aria-label="Close modal"
             >
-              ×
+              ✕
             </button>
             <img
               src={posterPA}
@@ -149,7 +150,8 @@ const PromoBanner = () => {
               className="promo-modal-img"
             />
           </motion.div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
