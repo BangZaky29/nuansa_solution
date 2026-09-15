@@ -1,0 +1,436 @@
+/* ==========================================
+   PROMO BANNER SECTION
+   ========================================== */
+.promo-banner-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, #e8f4fd 0%, #dbeafe 30%, #c3dafe 60%, #e0ecff 100%);
+}
+
+/* Background orbs */
+.promo-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.promo-bg-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(59, 130, 246, 0.25);
+  top: -100px;
+  right: -80px;
+  animation: promoFloat 8s ease-in-out infinite;
+}
+
+.promo-bg-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: rgba(167, 216, 255, 0.35);
+  bottom: -60px;
+  left: -60px;
+  animation: promoFloat 10s ease-in-out infinite reverse;
+}
+
+.promo-bg-orb-3 {
+  width: 200px;
+  height: 200px;
+  background: rgba(99, 179, 237, 0.2);
+  top: 40%;
+  left: 50%;
+  animation: promoFloat 6s ease-in-out infinite 2s;
+}
+
+@keyframes promoFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Badge */
+.promo-badge {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.2)) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  color: #b45309 !important;
+}
+
+/* Content Layout */
+.promo-banner-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ==========================================
+   POSTER COLUMN
+   ========================================== */
+.promo-poster-col {
+  display: flex;
+  justify-content: center;
+}
+
+.promo-poster-wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 420px;
+  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.promo-poster-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--radius-lg) + 4px);
+  background: linear-gradient(135deg, #60a5fa, #3b82f6, #93c5fd, #60a5fa);
+  background-size: 300% 300%;
+  animation: glowShift 4s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+@keyframes glowShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.promo-poster-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 20px 60px -10px rgba(59, 130, 246, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promo-poster-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(30, 64, 175, 0.55);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.promo-poster-wrapper:hover .promo-poster-overlay {
+  opacity: 1;
+}
+
+.promo-zoom-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================
+   INFO COLUMN
+   ========================================== */
+.promo-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-info-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.promo-title {
+  font-size: clamp(26px, 3vw, 38px) !important;
+  margin-bottom: 12px !important;
+  color: var(--gray-900);
+}
+
+.promo-highlight {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.promo-desc {
+  font-size: 16px;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* Price Badge */
+.promo-price-badge {
+  display: inline-flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+
+.promo-price-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(120, 53, 15, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.promo-price-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #78350f;
+  line-height: 1.2;
+}
+
+.promo-price-period {
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Highlights */
+.promo-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+.promo-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--gray-700);
+  font-weight: 500;
+}
+
+.promo-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: linear-gradient(135deg, #34d399, #10b981);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Ketentuan */
+.promo-ketentuan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 12px 16px;
+  background: var(--blue-50);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--blue-100);
+}
+
+.promo-ketentuan-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* CTA Button */
+.promo-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(18, 140, 126, 0.35);
+  transition: box-shadow 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.promo-cta-btn:hover {
+  box-shadow: 0 12px 36px rgba(18, 140, 126, 0.5);
+}
+
+/* ==========================================
+   MODAL
+   ========================================== */
+.promo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 24px;
+  cursor: pointer;
+}
+
+.promo-modal-content {
+  position: relative;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  cursor: default;
+}
+
+.promo-modal-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-700);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: transform 0.2s ease;
+}
+
+.promo-modal-close:hover {
+  transform: scale(1.1);
+}
+
+.promo-modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 968px) {
+  .promo-banner-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .promo-poster-wrapper {
+    max-width: 360px;
+  }
+
+  .promo-info-card {
+    padding: 32px;
+  }
+
+  .promo-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .promo-poster-wrapper {
+    max-width: 300px;
+  }
+
+  .promo-info-card {
+    padding: 24px;
+  }
+
+  .promo-title {
+    font-size: 24px !important;
+  }
+
+  .promo-price-value {
+    font-size: 24px;
+  }
+
+  .promo-price-badge {
+    padding: 12px 22px;
+  }
+
+  .promo-cta-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .promo-ketentuan {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .promo-modal-content {
+    max-width: 95vw;
+  }
+
+  .promo-modal-close {
+    top: -12px;
+    right: -4px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-poster-wrapper {
+    max-width: 260px;
+  }
+
+  .promo-info-card {
+    padding: 20px;
+  }
+
+  .promo-desc {
+    font-size: 14px;
+  }
+
+  .promo-highlight-item {
+    font-size: 13px;
+  }
+}

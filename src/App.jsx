@@ -10,6 +10,7 @@ import TeamSection from './components/TeamSection';
 import Footer from './footer';
 import IndustryPage from './industries/IndustryPage';
 import SertifikasiSection from './components/SertifikasiSection';
+import PromoBanner from './components/PromoBanner';
 import Verifikasi from './pages/Verifikasi';
 
 // Import Styles
@@ -31,6 +32,7 @@ const HomePage = () => (
   <main id="main-content">
     <Hero />
     <Features />
+    <PromoBanner />
     <SertifikasiSection />
     <TeamSection />
   </main>
