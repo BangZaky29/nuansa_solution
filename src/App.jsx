@@ -31,8 +31,8 @@ const ScrollToTop = () => {
 const HomePage = () => (
   <main id="main-content">
     <Hero />
-    <Features />
     <PromoBanner />
+    <Features />
     <SertifikasiSection />
     <TeamSection />
   </main>
