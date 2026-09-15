@@ -12,7 +12,7 @@ const PromoBanner = () => {
   const [showModal, setShowModal] = useState(false);
 
   const waLink = getWhatsAppLink(
-    '6285774055484',
+    '6285697474908',
     'Hallo kak, saya tertarik dengan layanan Personal Assistant (PA) Nuansa Solution. Bisa info lebih lanjut?'
   );
 
